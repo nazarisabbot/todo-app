@@ -34,11 +34,13 @@ export const createRow = (obj, index) => {
   const buttonTaskComplete = createEl('button', {
     className: 'btn btn-success me-3',
     textContent: 'Завершить',
+    disabled: obj.editBtn,
   });
 
   const buttonTaskEdit = createEl('button', {
     className: 'btn-edit btn btn-primary',
     textContent: 'Редактировать',
+    disabled: obj.editBtn,
   });
 
   tdForButton.append(buttonTaskDelete);

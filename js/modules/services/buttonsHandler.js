@@ -73,9 +73,12 @@ const changeStatusTask = (keyUser) => (e) => {
   const target = e.target;
 
   if (target.closest('.btn-success')) {
+    target.setAttribute('disabled', 'true');
     const parentCell = target.closest('.table-light');
     const taskCell = parentCell.querySelector('.task');
     const newStatus = taskCell.nextElementSibling;
+    const btnEdit = target.nextElementSibling;
+    btnEdit.setAttribute('disabled', 'true');
     parentCell.classList.replace('table-light', 'table-success');
     taskCell.classList.replace('task', 'text-decoration-line-through');
     newStatus.textContent = 'Выполнена';
@@ -89,6 +92,7 @@ const changeStatusTask = (keyUser) => (e) => {
         item.state = 'table-success';
         item.decaration = 'text-decoration-line-through';
         item.status = 'Выполнена';
+        item.editBtn = 'false';
       }
     }
 

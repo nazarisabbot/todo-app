@@ -1,7 +1,7 @@
 import {createEl} from './services/createElements.js';
 
 export const authorWindow = (parent) => {
-  /* Add class for main container */
+  /* Add class for the main container */
   parent.classList.add(
     'vh-100',
     'w-100',

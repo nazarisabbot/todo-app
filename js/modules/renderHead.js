@@ -1,7 +1,7 @@
 import {createEl} from './services/createElements.js';
 
 export const renderHead = (parent, nameUser) => {
-  /* Add class for main container */
+  /* Add class for the main container */
   parent.classList.add(
     'vh-100',
     'w-100',
@@ -18,17 +18,15 @@ export const renderHead = (parent, nameUser) => {
 
   /* Create form */
   const form = createEl('form', {
-    className: 'form-task d-flex align-items-center mb-3 col-3',
+    className:
+      'form-task d-flex align-items-center justify-content-space-between mb-3',
   });
   //
 
   /* Create drop menu */
-  const divSelect = createEl('div', {
-    className: 'col-sm-4 me-3',
-  });
-
   const select = createEl('select', {
     className: 'form-select form-select-sm me-3',
+    style: 'width: initial !important;',
     name: 'Important',
   });
 
@@ -56,7 +54,6 @@ export const renderHead = (parent, nameUser) => {
   });
   //
 
-  divSelect.append(select);
   select.append(option);
   select.append(optionOrdinary);
   select.append(optionImportant);
@@ -69,7 +66,7 @@ export const renderHead = (parent, nameUser) => {
 
   const input = createEl('input', {
     type: 'text',
-    className: 'form-control form-control_input col-3',
+    className: 'form-control form-control_input',
     name: 'nameTask',
     placeholder: 'ввести задачу',
   });
@@ -92,7 +89,7 @@ export const renderHead = (parent, nameUser) => {
   parent.append(form);
   form.append(label);
   label.append(input);
-  form.append(divSelect);
+  form.append(select);
   form.append(buttonSave);
   form.append(buttonClear);
 };
